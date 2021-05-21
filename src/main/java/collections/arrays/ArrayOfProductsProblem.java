@@ -17,22 +17,29 @@ public class ArrayOfProductsProblem {
      *  right = 1
      */
     public int[] arrayOfArrayProducts(int[] arr) {
+        int[] productArray;
+
+        if (arr.length <= 1) {
+            productArray = new int[0];
+            return productArray;
+        }
+
         int left = 1;
         int right = getRightValue(arr, 0);
-        int[] productArray = new int[arr.length];
+        productArray = new int[arr.length];
 
         for (int i=0; i < arr.length; i++) {
             productArray[i] = left * right;
             left = left * arr[i]; // new left
-            right = getRightValue(arr, i + 1); // new right
+            right = getRightValue(arr, i+1); // new right
         }
         return productArray;
     }
 
-    private int getRightValue(int[] arr, Integer currentIndex) {
+    private int getRightValue(int[] arr, int currentIndex) {
         int rightValue = 1;
         for (int i=currentIndex + 1; i < arr.length; i++) {
-            rightValue = rightValue * i;
+            rightValue = rightValue * arr[i];
         }
         return rightValue;
     }
