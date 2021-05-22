@@ -1,4 +1,4 @@
-package graphs;
+package graphs.dfs;
 
 public class CountingIslandsProblem {
 

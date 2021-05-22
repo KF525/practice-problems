@@ -1,5 +1,7 @@
 package collections.arrays;
 
+import static collections.util.Display.printArr;
+
 public class ArrayOfProductsApp {
 
     /**
@@ -15,9 +17,5 @@ public class ArrayOfProductsApp {
         printArr(a.arrayOfArrayProducts(arr2));
     }
 
-    private static void printArr(int[] arr) {
-        for (int a : arr) {
-            System.out.print(a + " ");
-        }
-    }
+
 }
