@@ -16,6 +16,7 @@ public class SortColorsApp {
         int[] colorsArray1 = {2,0,1,0,1,0,2};
         int[] colorsArray2 = {1,0,2,1,0,2};
         int[] colorsArray3 = {0,1,2,0,1,2};
+
         printArr(s.sortColors(colorsArray1));
         printArr(s.sortColors(colorsArray2));
         printArr(s.sortColors(colorsArray3));

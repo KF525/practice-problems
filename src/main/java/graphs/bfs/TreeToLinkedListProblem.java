@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class TreeToLinedListProblem {
+public class TreeToLinkedListProblem {
 
     /**
      * Since this problem is asking us to identify the various levels of a tree,
@@ -29,12 +29,12 @@ public class TreeToLinedListProblem {
      * 5. Out of the while loop, add the last list to the final list before returning it.
      */
 
-    public List<LinkedList<Node>> generateLinkedLists(Node root) {
+    public List<List<Node>> generateLinkedLists(Node root) {
         int level = 0;
-        int currentLevel = 0;
+        int currentLevel;
         Queue<NodeWithLevel> nodeLevelQueue = new LinkedList<>();
         nodeLevelQueue.add(new NodeWithLevel(root, level));
-        List<LinkedList<Node>> nodeLinkedLists = new ArrayList<>();
+        List<List<Node>> nodeLinkedLists = new ArrayList<>();
         LinkedList<Node> linkedListLevel = new LinkedList<>();
 
         while (!nodeLevelQueue.isEmpty()) {
@@ -46,11 +46,11 @@ public class TreeToLinedListProblem {
                 level++;
                 linkedListLevel = new LinkedList<>();
             }
-            if (currentNode.getLeft() != null) {
-                nodeLevelQueue.add(new NodeWithLevel(currentNode.getLeft(), currentLevel + 1));
+            if (currentNode.left != null) {
+                nodeLevelQueue.add(new NodeWithLevel(currentNode.left, currentLevel + 1));
             }
-            if (currentNode.getRight() != null) {
-                nodeLevelQueue.add(new NodeWithLevel(currentNode.getRight(), currentLevel + 1));
+            if (currentNode.right != null) {
+                nodeLevelQueue.add(new NodeWithLevel(currentNode.right, currentLevel + 1));
             }
             linkedListLevel.add(currentNode);
             }
@@ -59,8 +59,8 @@ public class TreeToLinedListProblem {
     }
 
     public class NodeWithLevel {
-        Node node;
-        int level;
+        public Node node;
+        public int level;
 
         public NodeWithLevel(Node node, int level) {
             this.node = node;

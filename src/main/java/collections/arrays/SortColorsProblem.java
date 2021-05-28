@@ -1,8 +1,14 @@
 package collections.arrays;
 
 /**
- * Approach: Three pointers
+ * Approach: Three pointers- pointer for white which will be at the front of the array,
+ * pointer for blue which will be at the end of the array, and then a pointer to current
+ * node. While current is less than or equal to blue index. If current value is 0, swap with
+ * whatever is at the white index. Then increment white index and current index. If it's blue
+ * swap and decrement blue index. If current is neither blue nor white, just increment current.
+ *
  * Questions: Can the array be empty? Have only 1 or 2 items in it?
+ * Time complexity: O(N) where N is the size of the array.
  */
 public class SortColorsProblem {
 

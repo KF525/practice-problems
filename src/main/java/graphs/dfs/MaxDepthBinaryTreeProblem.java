@@ -13,8 +13,8 @@ public class MaxDepthBinaryTreeProblem {
     public int maxDepthBinaryTree(Node root) {
         if (root == null) return 0;
 
-        int leftMaxHeight = getMaxHeight(root.getLeft());
-        int rightMaxHeight = getMaxHeight(root.getRight());
+        int leftMaxHeight = getMaxHeight(root.left);
+        int rightMaxHeight = getMaxHeight(root.right);
 
         return 1 + Math.max(leftMaxHeight, rightMaxHeight);
     }
@@ -24,6 +24,6 @@ public class MaxDepthBinaryTreeProblem {
         if (node == null) {
             return 0;
         }
-        return 1 + Math.max(getMaxHeight(node.getLeft()), getMaxHeight(node.getRight()));
+        return 1 + Math.max(getMaxHeight(node.left), getMaxHeight(node.right));
     }
 }
